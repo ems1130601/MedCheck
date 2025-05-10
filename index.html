@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新莊分隊藥物查看</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        .container {
+            padding: 0 20px;
+        }
+        .header {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0f766e;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .drug-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 50px 0;
+        }
+        .drug-button {
+            background-color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 24px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            text-decoration: none;
+            border-left: 4px solid #0f766e;
+        }
+        .drug-button:hover, .drug-button:active {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+            background-color: #f0f9ff;
+        }
+        .emoji {
+            font-size: 1.6rem;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .drug-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .drug-name {
+            color: #0f766e;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+        .drug-name:last-child {
+            margin-bottom: 0;
+        }
+        footer {
+            background-color: #f1f5f9;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            padding: 0 20px;
+        }
+        .last-updated {
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* 增強的響應式設計 */
+        @media (max-width: 768px) {
+            .drug-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 16px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .emoji {
+                font-size: 1.4rem;
+                margin-right: 10px;
+            }
+        }
+        
+        /* 手機專屬優化 */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .drug-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .drug-button {
+                height: auto;
+                min-height: 80px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .drug-name {
+                font-size: 1.1rem;
+            }
+            .header {
+                margin: 20px 0;
+            }
+            .header::after {
+                width: 60px;
+            }
+            footer {
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+        }
+        
+        /* 觸控設備優化 */
+        @media (hover: none) {
+            .drug-button {
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+            .drug-button:active {
+                background-color: #f0f9ff;
+                transform: scale(0.98);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>新莊分隊藥物查看</h1>
+        </div>
+        
+        <div class="drug-grid">
+            <a href="atropine.html" class="drug-button">
+                <span class="emoji">❤️</span>
+                <div class="drug-content">
+                    <span class="drug-name">Atropine</span>
+                </div>
+            </a>
+            <a href="ntg-aspirin-brilinta.html" class="drug-button">
+                <span class="emoji">❤️</span>
+                <div class="drug-content">
+                    <span class="drug-name">NTG</span>
+                    <span class="drug-name">Aspirin</span>
+                    <span class="drug-name">Brilinta</span>
+                </div>
+            </a>
+            <a href="transamin.html" class="drug-button">
+                <span class="emoji">🩸</span>
+                <div class="drug-content">
+                    <span class="drug-name">Transamin</span>
+                </div>
+            </a>
+            <a href="tramadol.html" class="drug-button">
+                <span class="emoji">🩸</span>
+                <div class="drug-content">
+                    <span class="drug-name">Tramadol</span>
+                </div>
+            </a>
+            <a href="sodium-bicarbonate.html" class="drug-button">
+                <span class="emoji">🩸</span>
+                <div class="drug-content">
+                    <span class="drug-name">Sodium Bicarbonate</span>
+                </div>
+            </a>
+            <a href="berotec-ventolin.html" class="drug-button">
+                <span class="emoji">🫁</span>
+                <div class="drug-content">
+                    <span class="drug-name">Berotec</span>
+                    <span class="drug-name">Ventolin</span>
+                </div>
+            </a>
+            <a href="midazolam.html" class="drug-button">
+                <span class="emoji">🧠</span>
+                <div class="drug-content">
+                    <span class="drug-name">Midazolam</span>
+                </div>
+            </a>
+            <a href="epinephrine-amiodarone.html" class="drug-button">
+                <span class="emoji">🖤</span>
+                <div class="drug-content">
+                    <span class="drug-name">Epinephrine</span>
+                    <span class="drug-name">Amiodarone</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>©HUNG | 版權所有</p>
+            <p class="last-updated">最後更新: 2025年5月10日</p>
+        </div>
+    </footer>
+</body>
+</html>

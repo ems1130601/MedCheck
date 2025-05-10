@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berotec、Ventolin 藥物詳情</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        .container {
+            padding: 0 20px;
+        }
+        .header {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0f766e;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: #0f172a;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .emoji {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid #0f766e;
+        }
+        .drug-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .drug-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        h2 {
+            color: #0f766e;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        h3 {
+            color: #0f766e;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        .warning {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+        .note {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #64748b;
+        }
+        .home-link {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: #0f766e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .home-link:hover {
+            color: #134e4a;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #f1f5f9;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            padding: 0 20px;
+        }
+        
+        /* 增強的響應式設計 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .emoji {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 20px;
+            }
+            .drug-section {
+                margin-bottom: 40px;
+                padding-bottom: 25px;
+            }
+        }
+        
+        /* 手機專屬優化 */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
+            }
+            h3 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                padding-bottom: 6px;
+            }
+            .header {
+                margin: 20px 0;
+            }
+            .header::after {
+                width: 60px;
+            }
+            .card {
+                padding: 15px;
+                margin-bottom: 20px;
+                border-left-width: 4px;
+            }
+            .emoji {
+                font-size: 1.4rem;
+                margin-right: 10px;
+            }
+            ul {
+                padding-left: 16px;
+            }
+            li {
+                margin-bottom: 10px;
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+            .note {
+                padding: 12px;
+                margin-top: 12px;
+                font-size: 0.9rem;
+            }
+            .home-link {
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+            footer {
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+            .drug-section {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+        }
+        
+        /* 觸控設備優化 */
+        @media (hover: none) {
+            .home-link:active {
+                color: #0f766e;
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-link">← 返回首頁</a>
+        
+        <div class="header">
+            <h1><span class="emoji">🫁</span>呼吸類藥物</h1>
+        </div>
+
+        <!-- Berotec Section -->
+        <div class="drug-section">
+            <h2>Berotec</h2>
+            
+            <div class="card">
+                <h3>適應症</h3>
+                <ul>
+                    <li>呼吸困難且有 wheezing</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>禁忌症</h3>
+                <ul>
+                    <li class="warning">對藥物過敏</li>
+                    <li class="warning">心跳過快</li>
+                    <li class="warning">心因性呼吸窘迫</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>使用方式</h3>
+                <ul>
+                    <li>IH 吸入兩劑,每劑間隔 1min</li>
+                    <li>20min 後未改善給第二次</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ventolin Section -->
+        <div class="drug-section">
+            <h2>Ventolin</h2>
+            
+            <div class="card">
+                <h3>適應症</h3>
+                <ul>
+                    <li>無法配合使用 Berotec</li>
+                    <li>使用兩次 Berotec 後症狀沒改善</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>禁忌症</h3>
+                <ul>
+                    <li class="warning">心因性呼吸窘迫</li>
+                    <li class="warning">對藥物過敏</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>使用方式</h3>
+                <ul>
+                    <li>一支(5mg)加入 N/S 到 4cc，氧氣流量開 6L/min(不可使用潮氣瓶)</li>
+                    <li>1-8 歲或是體重 &lt; 40kg 兒童劑量減半(一支給半支)</li>
+                </ul>
+                <div class="note">
+                    <strong>注意：</strong>不可使用潮氣瓶
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>©HUNG | 版權所有</p>
+        </div>
+    </footer>
+</body>
+</html>
